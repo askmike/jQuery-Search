@@ -120,21 +120,19 @@ first create an object:
 			inited = true;
 			output = templates.length;
 		},
+		/*
+			This function takes an array of words as input and 
+		*/
 		query = function( words ) {
 			
 			//reset the score and the results array
 			clean();
 
-			var 
-				inArray = function( item, array ) {
-					return $.inArray( item, array ) < 0;
-				};
-
 			// every word
 			for( var lenI = words.length, i = 0; i < lenI; i++ ) {
 				var	word = words[i];
 
-				//in every template
+				// in every template
 				for( var lenJ = templates.length, j = 0; j < lenJ; j++ ) {
 
 					var template = templates[j],
@@ -149,7 +147,7 @@ first create an object:
 							template.score += scoreBoard[k];
 
 							//if it's a new word
-							if( inArray(j, included) ){
+							if( $.inArray( j, included ) < 0 ){
 								//it's not in the array yet
 								included.push( j );
 							}
@@ -167,17 +165,17 @@ first create an object:
 			this funcion resets all scores to 0
 		*/
 		clean = function() {
-			//reset score
-			for( var len = templates.length, i = 0; i < len; i++ ) {
+			for( var i = templates.length; i-- ; ) {
 				templates[i].score = 0;
 			}
 
 		},
 		/*
 			this functions hides all singles that are either not in included or have a to low score
+			it additionally sorts all singles based on the score
 		*/
 		build = function( treshold ) {
-			console.log(singles);
+
 			function scoreSort( a, b ) {
 			    return $( a ).data( 'score' ) < $( b ).data( 'score' ) ? 1 : -1;
 			}
@@ -242,7 +240,7 @@ first create an object:
 			query( words );
 
 			//add query to input
-			if( !input && words[0] != ' ' ) {//it's not a reset
+			if( !input && words[0] != ' ' ) { //it's not a reset
 				var string = words.join(' ') + ' ';
 				search.val( string );
 			}
@@ -258,7 +256,7 @@ first create an object:
 		query( wordsParam );
 	}
 	
-	// return output;
+	return output;
 
   };
 })( jQuery );

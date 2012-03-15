@@ -2,7 +2,7 @@
 
 Search is a jQuery plugin that sets up a clientsided word filter on an input field (for direct input by the user).
 
-If you have lots of data on a page in a pre-defined structure Search will filter all the data based on the input.
+If you have lots of data on a page in a pre-defined structure Search will filter and sort all the data based on the input.
 
 ## How to use Search
 
@@ -33,7 +33,7 @@ Now you can filter using:
 
 ## Advanced
 
-Search binds an keydown event to the input. Search listens to either an empty input field (reset) or a spacebar. 
+Search binds an keydown event to the input. Search checks for either an empty input field (reset) or a spacebar. 
 
 You can only bind Search to one input element at this moment, you can only bind the search once.
 
@@ -41,13 +41,11 @@ When you pass either an object or nothing into Search it will only set up the fi
 
 At the end of the filter process (and when we set the filter up) we take all the `single`'s off dom to manipulate (hide and sort) them all at the same time. Therefor you should be careful when binding stuff on those elements natively (and use `.on` or `.live` instead).
 
+When you search by accessing the function, Search returns the number of hits
+
 ## Todo:
 
-* An easy way to include off dom data
 * A way to re-initialize the filter
-
-## Licencing
-
 
 ## Author
 
