@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+ 		<style>
+			body {
+				width:500px;
+				margin:50px auto 0;
+				overflow-y:scroll;
+			}
+		</style>
+    </head>
+    <body>
+		<input id='search' placeholder='search' autofocus />
+		<div id='blog'>
+			<article>
+				<h2>
+					Hello world!
+				</h2>
+				<div>
+					This is my first blogpost!
+				</div>
+			</article>
+			<article>
+				<h2>
+					Hello again
+				</h2>
+				<div>
+					This is my second blogpost!
+				</div>
+			</article>
+			<article>
+				<h2>
+					Lorem ipsum
+				</h2>
+				<div>
+					dolor sit amet, consectetur adipiscing elit. In fermentum, orci sed gravida egestas, enim turpis aliquam turpis, eu tincidunt augue leo at leo. Quisque sollicitudin quam in nisi sollicitudin rhoncus. Cras eleifend mollis massa, quis pretium urna vulputate at. Sed aliquet aliquam ullamcorper.
+				</div>
+			</article>
+			<article>
+				<h2>
+					ultrices ultricies
+				</h2>
+				<div>
+					vulputate vel. Vestibulum scelerisque dapibus lectus, a interdum eros posuere dapibus.
+				</div>
+			</article>
+			<article>
+				<h2>
+					vel euismod
+				</h2>
+				<div>
+					at arcu dapibus diam accumsan porta. Duis porttitor ullamcorper sagittis. Nullam faucibus sapien ac purus consectetur vitae adipiscing arcu pellentesque. Aenean malesuada felis vitae tortor rutrum vitae adipiscing arcu posuere. Sed bibendum tempor turpis, sit amet porta leo auctor eu. Ut non velit in dolor adipiscing adipiscing at eu metus. Ut mollis consequat odio id ultrices
+				</div>
+			</article>
+			<article>
+				<h2>
+					Nam tortor tellus
+				</h2>
+				<div>
+					varius sit amet mollis at, pulvinar ut nisl. Proin eget velit vitae neque luctus vestibulum placerat et velit. In lobortis, purus nec rutrum dignissim, nisl lacus placerat sapien, nec congue urna leo nec justo. Nulla eget risus sit amet urna scelerisque tincidunt in a urna. Vestibulum mollis felis a orci sagittis sit amet faucibus augue fringilla. Nullam nibh odio, elementum in vulputate a, vehicula eu ante. 
+				</div>
+			</article>
+			<article>
+				<h2>
+					My latest post!
+				</h2>
+				<div>
+					I want world peace.
+				</div>
+			</article>
+		</div>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="filter.js"></script>
+		<script>
+			var settings = {
+		    	container: '#blog', 
+		    	single: 'article', 
+		    	singleStructure: [ 
+		    		{
+		    			elem: 'h2',
+		    			score: 3
+		    		},
+		    		{
+		    			elem: 'div',
+		    			score: 1
+		    		}
+		    	]
+		    };
+
+		    $('#search').search(settings);
+		
+			// var array = $('#blog').find('article').detach();
+			
+			// var i = array.length;
+			// while ( i-- ) {
+			// 	array.eq( i ).css('background-color','red');
+			// }
+			
+			// for ( var i = array.length ; i-- ; ) {
+			// 	array.eq( i ).css('background-color','red');
+			// }
+			
+			// $('#blog').append(array);
+			
+		</script>
+	</body>
+</html>
