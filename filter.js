@@ -14,7 +14,7 @@
 			options,
 		// try getting the data from last time
 			data = this.data('search'),
-		// set the input elem
+		// store the input elem
 			search = this,
 			output;
 
@@ -22,7 +22,7 @@
 			wordsParam = parameter.split(' ');
 		} else if( typeof parameter === 'array' ) {
 			wordsParam = parameter;
-		} else if ( typeof parameter === 'object' ) {
+		} else if( typeof parameter === 'object' ) {
 			options = parameter;
 		}
 
@@ -47,7 +47,7 @@
 
 		if( !data ) {
 			
-			// data isn't there, this is the first run
+			// data isn't there, so this is the first run
 			inited = false;
 			
 			var container = $( settings.container ),
@@ -137,7 +137,7 @@
 								template.score += data.scoreBoard[k];
 		
 								//if it's a new word
-								if( $.inArray( j, data.included ) < 0 ){
+								if( $.inArray( j, data.included ) < 0 ) {
 									//it's not in the array yet
 									data.included.push( j );
 								}
