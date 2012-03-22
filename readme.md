@@ -1,8 +1,12 @@
-# Search jQuery plugin
+# jQuery Search plugin
 
-Search is a jQuery plugin that sets up a clientsided word filter on an input field (for direct input by the user).
+Search is a jQuery plugin that sets up a client sided word filter on an input field (for direct input by the user).
 
 If you have lots of data on a page in a pre-defined structure Search will filter and sort all the data based on the input.
+
+## Demo
+
+Check out the [online demo](http://mikevanrossum.nl/stuff/jQuery-Search/example.html).
 
 ## How to use Search
 
